@@ -1,0 +1,10 @@
+# Artefatos de trabalho — não fazem parte do site publicado
+copy-original.md
+assets/images/template.png
+assets/images/ramalhete direito.svg
+assets/images/ramalhetes direito.svg
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+desktop.ini
