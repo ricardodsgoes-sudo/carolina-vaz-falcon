@@ -381,7 +381,8 @@ em { font-style: italic; }
 .hero__deco { display: none; }
 
 @media (min-width: 1024px) {
-  .hero { padding-bottom: 0; }
+  /* Sem padding no topo: a imagem da hero encosta no topo, atrás do header flutuante */
+  .hero { padding-top: 0; padding-bottom: 0; }
   .hero__inner {
     grid-template-columns: 1fr 1.02fr; align-items: stretch; gap: 0;
     min-height: clamp(390px, 54vh, 520px);
@@ -390,7 +391,9 @@ em { font-style: italic; }
     max-width: none; margin: 0; align-self: center;
     padding-left: max(var(--gutter), calc((100vw - var(--container)) / 2 + var(--gutter)));
     padding-right: clamp(1.5rem, 1rem + 2vw, 3rem);
-    padding-block: clamp(1.2rem, 3vh, 2.2rem);
+    /* topo compensa a altura do header (só o texto desce; a imagem sobe) */
+    padding-top: calc(var(--header-h) + clamp(1.2rem, 3vh, 2.2rem));
+    padding-bottom: clamp(1.2rem, 3vh, 2.2rem);
   }
   .hero__media { height: 100%; }
   .hero__img {
