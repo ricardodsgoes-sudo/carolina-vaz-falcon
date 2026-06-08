@@ -1,0 +1,44 @@
+# =================================================================
+# Sveltia CMS — painel de conteúdo do blog (sem WordPress)
+# A Carolina edita aqui; cada "Publicar" vira um commit no GitHub e
+# a Cloudflare publica sozinha.
+#
+# PENDENTE (etapa de infra, feita depois): criar uma GitHub OAuth App
+# e publicar o Worker `sveltia-cms-auth`; então preencher `base_url`.
+# Enquanto isso, o login não funciona — mas o build do site já funciona.
+# =================================================================
+
+backend:
+  name: github
+  repo: ricardodsgoes-sudo/carolina-vaz-falcon
+  branch: main            # alvo final. Durante o teste, pode apontar p/ feature/blog.
+  # base_url: https://SEU-WORKER.workers.dev   # <- Worker sveltia-cms-auth (preencher depois)
+
+# Modo local (só afeta localhost; em produção é ignorado e usa o backend GitHub acima).
+# Permite editar os arquivos da máquina pelo painel, no Chrome, sem proxy nem GitHub.
+local_backend: true
+
+# Idioma do painel
+locale: pt
+
+# Onde as imagens enviadas pelo painel são salvas
+media_folder: "assets/images/blog"
+public_folder: "/assets/images/blog"
+
+collections:
+  - name: blog
+    label: "Blog"
+    label_singular: "Post"
+    description: "Artigos do blog. Conteúdo informativo — sem depoimentos e sem promessa de cura (Código de Ética do Psicólogo)."
+    folder: "blog/posts"
+    create: true
+    slug: "{{slug}}"
+    extension: md
+    format: frontmatter
+    fields:
+      - { name: title, label: "Título", widget: string }
+      - { name: date, label: "Data", widget: datetime, format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false }
+      - { name: description, label: "Resumo (aparece no Google e nos cards) — ~150 caracteres", widget: text }
+      - { name: cover, label: "Imagem de capa", widget: image, required: false }
+      - { name: draft, label: "Rascunho (não publicar ainda)", widget: boolean, default: true }
+      - { name: body, label: "Conteúdo", widget: markdown }

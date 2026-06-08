@@ -1,0 +1,44 @@
+---
+layout: base.njk
+title: "Blog · Saúde emocional e autoconhecimento"
+description: "Reflexões sobre saúde emocional, autoconhecimento e cuidado psicológico — por Carolina Vaz Falcon, psicóloga clínica (CRP 09/20609)."
+permalink: "/blog/"
+---
+<section class="container blog-listing">
+
+  <header class="section-head">
+    <p class="eyebrow eyebrow--center" data-animate>Blog</p>
+    <h1 class="section-title" data-animate>
+      Reflexões sobre <em>saúde emocional</em>
+    </h1>
+    <p class="section-lead" data-animate>
+      Um espaço para pensar o cuidado psicológico, o autoconhecimento e as relações — com escuta,
+      ética e linguagem acessível.
+    </p>
+  </header>
+
+  {% if collections.posts.length %}
+  <ul class="post-grid" role="list">
+    {% for post in collections.posts %}
+    <li class="post-card glass" data-animate>
+      <a class="post-card__link" href="{{ post.url }}">
+        {% if post.data.cover %}
+        <div class="post-card__media">
+          <img src="{{ post.data.cover }}" alt="" loading="lazy" decoding="async" width="600" height="375" />
+        </div>
+        {% endif %}
+        <div class="post-card__body">
+          <p class="post-card__date">{{ post.data.date | dataPt }}</p>
+          <h2 class="post-card__title">{{ post.data.title }}</h2>
+          <p class="post-card__excerpt">{{ post.data.description }}</p>
+          <span class="post-card__more">Ler mais <span aria-hidden="true">→</span></span>
+        </div>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p class="blog-empty">Em breve, novos conteúdos por aqui.</p>
+  {% endif %}
+
+</section>

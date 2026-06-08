@@ -4,6 +4,10 @@ assets/images/template.png
 assets/images/ramalhete direito.svg
 assets/images/ramalhetes direito.svg
 
+# Build do blog (Eleventy) e dependências — não versionar
+_site/
+node_modules/
+
 # Sistema operacional
 .DS_Store
 Thumbs.db

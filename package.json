@@ -1,0 +1,13 @@
+{
+  "name": "carolina-vaz-falcon-site",
+  "version": "1.0.0",
+  "description": "Site institucional + blog de Carolina Vaz Falcon (psicóloga). Site estático; blog gerado com Eleventy.",
+  "private": true,
+  "scripts": {
+    "dev": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  }
+}
