@@ -23,6 +23,7 @@ module.exports = function (eleventyConfig) {
 
   // Documentos do repositório que NÃO devem virar páginas
   eleventyConfig.ignores.add("README.md");
+  eleventyConfig.ignores.add("MANUTENCAO.md");
 
   // ---- Coleção de posts (mais recentes primeiro, sem rascunhos) ----
   eleventyConfig.addCollection("posts", function (api) {
