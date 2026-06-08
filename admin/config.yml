@@ -11,7 +11,7 @@
 backend:
   name: github
   repo: ricardodsgoes-sudo/carolina-vaz-falcon
-  branch: main            # alvo final. Durante o teste, pode apontar p/ feature/blog.
+  branch: feature/blog    # TEMPORARIO — ensaio seguro no preview. Voltar p/ main no merge.
   base_url: https://sveltia-cms-auth.ricardo-ds-goes.workers.dev   # Worker sveltia-cms-auth (OAuth GitHub)
 
 # Modo local (só afeta localhost; em produção é ignorado e usa o backend GitHub acima).
