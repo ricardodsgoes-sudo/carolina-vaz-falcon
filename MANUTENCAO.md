@@ -159,10 +159,10 @@ do repositório (a que contém a `.git`, ou seja, `02-site`). Os posts são grav
   **Ao fazer o merge para produção, voltar para `branch: main`.**
 - ⚠️ **A home ainda não tem link “Blog” no menu** (Fase 2 — edição de 1 linha no `index.html`).
   O blog é acessível por `/blog/`.
-- ⚠️ **`assets/images/online.png` está faltando** (referenciada no card “Atendimento online” da home) —
-  problema pré-existente, repor a imagem.
-- O post atual é **exemplo/placeholder**. Textos das fases, dos 4 pilares e do FAQ estão marcados
-  **“a validar”** com a cliente.
+- ⚠️ **Posts de teste do ensaio** (ex.: `blog/posts/titulo-teste.md`) devem ser **apagados antes/na hora
+  do merge** para não irem ao ar. Apague pelo `/admin` ou removendo o arquivo `.md`.
+- O post `cuidar-da-saude-emocional-no-dia-a-dia.md` é **exemplo/placeholder**. Textos das fases, dos 4
+  pilares e do FAQ estão marcados **“a validar”** com a cliente.
 
 ---
 
