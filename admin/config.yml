@@ -12,7 +12,7 @@ backend:
   name: github
   repo: ricardodsgoes-sudo/carolina-vaz-falcon
   branch: main            # alvo final. Durante o teste, pode apontar p/ feature/blog.
-  # base_url: https://SEU-WORKER.workers.dev   # <- Worker sveltia-cms-auth (preencher depois)
+  base_url: https://sveltia-cms-auth.ricardo-ds-goes.workers.dev   # Worker sveltia-cms-auth (OAuth GitHub)
 
 # Modo local (só afeta localhost; em produção é ignorado e usa o backend GitHub acima).
 # Permite editar os arquivos da máquina pelo painel, no Chrome, sem proxy nem GitHub.
