@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- ===================== SEO ===================== -->
-  <title>{{ title }} — {{ site.name }}</title>
+  {% if metaTitle %}<title>{{ metaTitle }}</title>{% else %}<title>{{ title }} — {{ site.name }}</title>{% endif %}
   <meta name="description" content="{{ description }}" />
   <meta name="author" content="{{ site.author }}" />
   <meta name="theme-color" content="#FBF7F0" />
 
   {% set ogImg = cover or '/assets/images/sobre-carolina.webp' %}
   <!-- Open Graph -->
-  <meta property="og:type" content="article" />
+  <meta property="og:type" content="{{ ogType or 'article' }}" />
   <meta property="og:title" content="{{ title }} — {{ site.name }}" />
   <meta property="og:description" content="{{ description }}" />
   <meta property="og:image" content="{{ ogImg }}" />
@@ -30,6 +30,7 @@
   <!-- Mesmos tokens/estilos do site + folha específica do blog -->
   <link rel="stylesheet" href="/css/style.css" />
   <link rel="stylesheet" href="/css/blog.css" />
+  {% if pageCss %}<link rel="stylesheet" href="{{ pageCss }}" />{% endif %}
 </head>
 
 <body>
@@ -54,7 +55,8 @@
         <a class="nav__link" href="/#atendimentos">Atendimentos</a>
         <a class="nav__link" href="/#abordagem">Abordagem</a>
         <a class="nav__link" href="/#sobre">Sobre mim</a>
-        <a class="nav__link" href="/blog/" aria-current="page">Blog</a>
+        <a class="nav__link" href="/grupos-e-projetos/"{% if navActive == 'grupos' %} aria-current="page"{% endif %}>Grupos e Projetos</a>
+        <a class="nav__link" href="/blog/"{% if navActive == 'blog' %} aria-current="page"{% endif %}>Blog</a>
         <a class="nav__link" href="/#contato">Contato</a>
       </nav>
 
@@ -72,7 +74,8 @@
       <a class="mobile-menu__link" href="/#atendimentos">Atendimentos</a>
       <a class="mobile-menu__link" href="/#abordagem">Abordagem</a>
       <a class="mobile-menu__link" href="/#sobre">Sobre mim</a>
-      <a class="mobile-menu__link" href="/blog/" aria-current="page">Blog</a>
+      <a class="mobile-menu__link" href="/grupos-e-projetos/"{% if navActive == 'grupos' %} aria-current="page"{% endif %}>Grupos e Projetos</a>
+      <a class="mobile-menu__link" href="/blog/"{% if navActive == 'blog' %} aria-current="page"{% endif %}>Blog</a>
       <a class="mobile-menu__link" href="/#contato">Contato</a>
       <a class="btn btn--gold mobile-menu__cta" href="{{ site.whatsapp }}" target="_blank" rel="noopener noreferrer">Agendar conversa</a>
     </nav>
@@ -81,7 +84,7 @@
   <!-- ============================================================= -->
   <!-- CONTEÚDO DO BLOG                                               -->
   <!-- ============================================================= -->
-  <main class="blog-main" id="conteudo">
+  <main class="{{ mainClass or 'blog-main' }}" id="conteudo">
     {{ content | safe }}
   </main>
 
@@ -104,6 +107,7 @@
         <a href="/#atendimentos">Atendimentos</a>
         <a href="/#abordagem">Abordagem</a>
         <a href="/#sobre">Sobre mim</a>
+        <a href="/grupos-e-projetos/">Grupos e Projetos</a>
         <a href="/blog/">Blog</a>
         <a href="/#contato">Contato</a>
       </nav>

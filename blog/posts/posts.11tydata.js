@@ -1,6 +1,7 @@
 // Dados aplicados a todos os posts em blog/posts/
 module.exports = {
   layout: "post.njk",
+  navActive: "blog",
   // Rascunhos (draft: true) NÃO geram página (permalink false) — ficam invisíveis no site,
   // acessíveis só pelo painel /admin. Posts normais vão para /blog/<slug>/.
   eleventyComputed: {

@@ -40,11 +40,13 @@ O site institucional (`index.html`, `css`, `js`, `assets`) é **copiado intacto*
 ```
 02-site/
 ├── index.html              # Home (site institucional) — copiada verbatim no build
+├── grupos-e-projetos.njk   # Página "Grupos e Projetos" (Eleventy → /grupos-e-projetos/)
 ├── css/
 │   ├── style.css           # Tokens (:root) + estilos do site
-│   └── blog.css            # Estilos só do blog (herda os tokens do style.css)
-├── js/main.js              # Animações/navbar do site (usado também no blog)
-├── assets/images/          # Imagens; blog usa assets/images/blog/
+│   ├── blog.css            # Estilos só do blog (herda os tokens do style.css)
+│   └── grupos.css          # Estilos só da página "Grupos e Projetos" (herda os tokens)
+├── js/main.js              # Animações/navbar do site (usado também no blog e nas páginas)
+├── assets/images/          # Imagens; ícones em assets/images/icons/ (Lucide recoloridos)
 │
 ├── blog/
 │   ├── index.njk           # Página /blog/ (listagem dos posts)
@@ -141,15 +143,22 @@ do repositório (a que contém a `.git`, ou seja, `02-site`). Os posts são grav
 | Adicionar/editar post | Pelo `/admin` (recomendado). Ou manual: criar `blog/posts/<slug>.md` com front matter (`title`, `date`, `description`, `cover`, `draft`). |
 | Trocar/adicionar imagem do blog | `assets/images/blog/` |
 | Mudar cores ou tipografia | `css/style.css` → bloco `:root` (variáveis) |
-| Editar header/footer do blog | `_includes/base.njk` ⚠️ (ver aviso de duplicação abaixo) |
+| Editar header/footer do blog/páginas | `_includes/base.njk` ⚠️ (ver aviso de duplicação abaixo) |
 | Mudar a listagem do blog | `blog/index.njk` |
 | Mudar o layout do post | `_includes/post.njk` |
+| Editar a página "Grupos e Projetos" | Conteúdo: `grupos-e-projetos.njk` · estilos: `css/grupos.css` |
+| Criar **outra** página institucional | Novo `.njk` na raiz com `layout: base.njk` + front matter: `permalink`, `title`, `description`, `metaTitle` (título exato), `navActive` (link ativo no menu), `mainClass: "page-shell"`, `pageCss` (CSS próprio, opcional), `ogType: "website"`. Adicionar o link do menu no `base.njk` **e** no `index.html` (nav desktop, mobile e rodapé). |
 | Adicionar campo no editor do CMS | `admin/config.yml` (lista `fields`) + renderizar no layout se for exibir |
 | Trocar de domínio | Atualizar `ALLOWED_DOMAINS` (Worker), Homepage/callback (OAuth App) e, se usar URL absoluta, `_data/site.json` |
 
-> ⚠️ **Duplicação header/footer:** o header e o footer do blog (`_includes/base.njk`) são uma **cópia** dos
-> do `index.html`. Se alterar um, altere o outro para manter a consistência. (Refatorar para um partial
-> compartilhado é uma melhoria futura possível.)
+> ⚠️ **Duplicação header/footer:** o header e o footer do `index.html` (home, estática) são uma **cópia** dos
+> do `_includes/base.njk` (usado pelo blog e pela página "Grupos e Projetos"). Se alterar um — em especial
+> **os links do menu** —, altere o outro para manter a consistência. (Refatorar para um partial compartilhado
+> é uma melhoria futura possível.)
+>
+> **Menu / estado ativo:** o link ativo é controlado pela variável `navActive` no front matter de cada página
+> (`"blog"` nas páginas do blog, `"grupos"` na página Grupos e Projetos). A home (`index.html`) é estática e
+> não marca item ativo.
 
 ---
 
@@ -157,6 +166,10 @@ do repositório (a que contém a `.git`, ou seja, `02-site`). Os posts são grav
 
 - **Blog no ar.** Em produção desde **2026-06-08**, com link **“Blog” no menu da home** (desktop, mobile
   e rodapé) e **1 post publicado** ("Cuidar da saúde emocional no dia a dia"). A Carol publica mais pelo `/admin`.
+- **Página "Grupos e Projetos"** (`/grupos-e-projetos/`) — adicionada em **2026-06-09**. Apresenta grupos
+  terapêuticos, palestras/rodas/workshops (acordeão por categoria), instituições atendidas, "como funciona"
+  e ética. Link no menu (desktop, mobile e rodapé) da home e das páginas Eleventy. Conteúdo institucional,
+  sem promessas de resultado/depoimentos (Código de Ética/CFP).
 - **Rascunhos são privados:** posts com `draft: true` **não geram página** — nem por URL direta
   (lógica em `blog/posts/posts.11tydata.js`). Aparecem só no `/admin`.
 - O post `cuidar-da-saude-emocional-no-dia-a-dia.md` foi escrito como conteúdo inicial e está **publicado**.
