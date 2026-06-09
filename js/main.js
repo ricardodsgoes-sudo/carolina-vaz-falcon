@@ -213,8 +213,7 @@
   revealEls.forEach(function (el) {
     gsap.from(el, {
       scrollTrigger: { trigger: el, start: "top 88%", toggleActions: "play none none none" },
-      y: 30, opacity: 0, duration: 0.85, ease: "power3.out",
-      clearProps: "transform" // remove o transform inline ao fim → libera o hover (CSS) dos cards
+      y: 30, opacity: 0, duration: 0.85, ease: "power3.out"
     });
   });
 
