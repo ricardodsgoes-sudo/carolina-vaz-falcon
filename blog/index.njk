@@ -20,7 +20,7 @@ permalink: "/blog/"
   {% if collections.posts.length %}
   <ul class="post-grid" role="list">
     {% for post in collections.posts %}
-    <li class="post-card glass" data-animate>
+    <li class="post-card" data-animate>
       <a class="post-card__link" href="{{ post.url }}">
         {% if post.data.cover %}
         <div class="post-card__media">

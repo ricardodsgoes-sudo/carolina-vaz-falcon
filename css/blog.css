@@ -31,19 +31,23 @@
 .post-card {
   border-radius: var(--radius);
   overflow: hidden;
+  /* superfície sólida-clara (mesmo visual do glass, sem backdrop-filter — hover suave) */
+  background: rgba(255, 255, 255, .72);
+  border: 1px solid var(--glass-border);
   box-shadow: var(--shadow-sm);
-  transition: transform var(--t), box-shadow var(--t);
+  transition: transform .35s var(--ease-out), box-shadow .35s var(--ease-out);
+  will-change: transform;
 }
-.post-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+.post-card:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
 
 .post-card__link { display: flex; flex-direction: column; height: 100%; }
 
 .post-card__media { overflow: hidden; }
 .post-card__media img {
   width: 100%; aspect-ratio: 16 / 10; object-fit: cover;
-  transition: transform var(--t) var(--ease-out);
+  transition: transform .5s var(--ease-out);
 }
-.post-card:hover .post-card__media img { transform: scale(1.04); }
+.post-card:hover .post-card__media img { transform: scale(1.05); }
 
 .post-card__body {
   display: flex; flex-direction: column; gap: .5rem;
