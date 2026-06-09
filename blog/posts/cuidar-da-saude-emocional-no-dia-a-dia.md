@@ -2,7 +2,7 @@
 title: Cuidar da saúde emocional no dia a dia
 date: 2026-06-08
 description: Pequenas práticas de atenção a si mesmo que ajudam a sustentar o bem-estar emocional entre uma sessão e outra.
-cover: /assets/images/conheca-carolina.webp
+cover: /assets/images/blog/imgi_16_480125829_18055681793089590_7501080184819521263_n.jpeg
 draft: false
 ---
 
