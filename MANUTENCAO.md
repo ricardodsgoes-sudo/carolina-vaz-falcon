@@ -155,14 +155,12 @@ do repositório (a que contém a `.git`, ou seja, `02-site`). Os posts são grav
 
 ## 9. Pendências e pontos de atenção (estado atual)
 
-- **Blog no ar (vazio).** Foi para produção em **2026-06-08**, sem posts publicados ("Em breve…").
-  A Carol publica o 1º post pelo `/admin`.
+- **Blog no ar.** Em produção desde **2026-06-08**, com link **“Blog” no menu da home** (desktop, mobile
+  e rodapé) e **1 post publicado** ("Cuidar da saúde emocional no dia a dia"). A Carol publica mais pelo `/admin`.
 - **Rascunhos são privados:** posts com `draft: true` **não geram página** — nem por URL direta
   (lógica em `blog/posts/posts.11tydata.js`). Aparecem só no `/admin`.
-- O post `cuidar-da-saude-emocional-no-dia-a-dia.md` está como **rascunho** (modelo pronto). A Carol pode
-  revisá-lo e publicá-lo (desligar "Rascunho") ou escrever o dela.
-- ⚠️ **A home ainda não tem link “Blog” no menu** (Fase 2 — edição de 1 linha no `index.html`).
-  Recomendado adicionar **depois** que houver ao menos 1 post publicado (para não levar a uma página vazia).
+- O post `cuidar-da-saude-emocional-no-dia-a-dia.md` foi escrito como conteúdo inicial e está **publicado**.
+  A Carol pode editá-lo ou substituí-lo pelo `/admin`.
 - **Soft-404 (melhoria opcional):** URLs inexistentes retornam a **home com status 200** (padrão da
   Cloudflare Pages sem `404.html`). Para um 404 "de verdade", criar uma página `404.html`/`404.njk` no build.
 - Textos das fases, dos 4 pilares e do FAQ da home seguem marcados **“a validar”** com a cliente.
