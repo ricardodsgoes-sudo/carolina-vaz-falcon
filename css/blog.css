@@ -97,9 +97,9 @@
   text-transform: uppercase; color: var(--gold-dark); font-weight: 500;
 }
 
-.post__cover-wrap { margin: 0 auto clamp(1.8rem, 1.2rem + 2vw, 2.8rem); }
+.post__cover-wrap { max-width: 640px; margin: 0 auto clamp(1.8rem, 1.2rem + 2vw, 2.8rem); }
 .post__cover {
-  width: 100%; max-height: 460px; object-fit: cover;
+  width: 100%; height: auto;       /* imagem inteira, sem corte (proporção natural) */
   border-radius: var(--radius-lg); box-shadow: var(--shadow);
 }
 
