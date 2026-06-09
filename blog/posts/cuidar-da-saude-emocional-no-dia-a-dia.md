@@ -1,9 +1,9 @@
 ---
-title: "Cuidar da saúde emocional no dia a dia"
+title: Cuidar da saúde emocional no dia a dia
 date: 2026-06-08
-description: "Pequenas práticas de atenção a si mesmo que ajudam a sustentar o bem-estar emocional entre uma sessão e outra."
-cover: "/assets/images/conheca-carolina.webp"
-draft: true
+description: Pequenas práticas de atenção a si mesmo que ajudam a sustentar o bem-estar emocional entre uma sessão e outra.
+cover: /assets/images/conheca-carolina.webp
+draft: false
 ---
 
 A saúde emocional não se constrói apenas dentro do consultório. Ela acontece, sobretudo, nas
