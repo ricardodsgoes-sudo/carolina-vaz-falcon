@@ -149,15 +149,6 @@
   background: var(--cream-3); color: var(--ink);
 }
 
-/* ----- Rodapé do artigo (CTA) ----- */
-.post__foot {
-  max-width: 68ch; margin: clamp(2.4rem, 2rem + 3vw, 4rem) auto 0;
-  padding-top: clamp(1.6rem, 1.2rem + 2vw, 2.4rem);
-  border-top: var(--hairline);
-  display: flex; flex-direction: column; align-items: flex-start; gap: 1.2rem;
-}
-.post__note { font-size: .9rem; color: var(--muted); }
-
 /* ============================== BREAKPOINTS ============================== */
 @media (min-width: 768px) {
   .post-grid { grid-template-columns: repeat(2, 1fr); }
