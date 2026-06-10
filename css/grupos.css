@@ -87,6 +87,33 @@
 }
 .info-card__text { font-size: .92rem; color: var(--body); line-height: 1.6; }
 
+/* Bloco "Em foco" — destaque de um grupo com texto mais longo + lista de temas
+   (usado para o Grupo de Adolescentes, que tem conteúdo mais extenso) */
+.destaque {
+  margin-top: clamp(1.6rem, 1.1rem + 2vw, 2.6rem);
+  padding: clamp(1.5rem, 1.1rem + 2.2vw, 2.6rem);
+  border-radius: var(--radius-lg);
+}
+.destaque__head { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.3rem; }
+.destaque__icon {
+  display: grid; place-items: center; flex: none;
+  width: 60px; height: 60px; padding: 15px; border-radius: 50%;
+  background: var(--white); border: var(--hairline); box-shadow: var(--shadow-sm);
+}
+.destaque__eyebrow {
+  font-family: var(--font-body); font-size: .72rem; font-weight: 600;
+  letter-spacing: .22em; text-transform: uppercase; color: var(--gold-dark);
+  margin-bottom: .3rem;
+}
+.destaque__title { font-family: var(--font-display); font-size: var(--fs-h3); color: var(--ink); line-height: 1.2; }
+.destaque__p { color: var(--body); line-height: 1.72; }
+.destaque__p + .destaque__p { margin-top: .85rem; }
+.destaque__sub {
+  margin: 1.4rem 0 .9rem;
+  font-family: var(--font-body); font-weight: 600; font-size: .98rem; color: var(--ink);
+}
+.destaque .tema-list { margin-bottom: 1.4rem; }
+
 /* ============================== ACORDEÃO DE CATEGORIAS (PALESTRAS) ============================== */
 /* Reaproveita .accordion / .acc-item / .acc-item__chev (style.css) + animação do main.js */
 .cat-accordion { max-width: 880px; margin-inline: auto; }
